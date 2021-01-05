@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card  mt-3 p-3 shadow-sm">
+              <h1>Order</h1>
+                <div class="row">
+                    <div class="col-5">
+                        <img src="{{Detail.Poster}}" alt="">
+                    </div>
+                    <div class="col-7">
+                        <form (ngSubmit) = "ngSubmit(f)" #f = "ngForm">
+                          <div class="form-group">
+                            <label for="Id">Id</label>
+                            <input type="text" class="form-control" id="Id"  placeholder="No Id" ngModel name="id">
+                          </div>
+                          <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama"  placeholder="Nama" ngModel name="name">
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email"  placeholder="Your@Email" ngModel name="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" id="phone"  placeholder="08xxxxxx" ngModel name="phone">
+                          </div>
+                          <div class="form-group">
+                            <label for="film">film</label>
+                            <input type="text" class="form-control" id="film"  placeholder="{{Detail.Title}}" [ngModel]="Detail.Title" name="film">
+                          </div>
+                          <div class="form-group">
+                            <label for="phone">Harga</label>
+                            <input type="text" class="form-control" placeholder="{{harga}}" id="harga" [ngModel]="harga" name="harga">
+                          </div>
+                          <div class="form-group">
+                            <label for="total">Total</label>
+                            <input type="text" class="form-control disabled" id="total"  placeholder="{{total}}" [ngModel]="total" name="total" readonly>
+                          </div>
+                          <div class="form-group" >
+                            <button type="submit" class="btn btn-primary ">Checkout</button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <div *ngIf="submitted">
+                    <h3> You Order Succesfully, thank you</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

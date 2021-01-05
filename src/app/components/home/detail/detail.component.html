@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row" id="movie_list">
+        <div class="col-md-6">
+          <div class="card mt-3 p-2">
+            <div class="row">
+              <div class="col-6">
+                <img src="{{Detail.Poster}}" class="card-img-top s" alt="">
+              </div>
+              <div class="col-6">
+                <h5 class="card-title">{{Detail.Title}}</h5>
+                <p class="card-text"><small class="text-muted">{{Detail.Year}}</small></p>
+                <p class="card-text"><small>Genre: {{Detail.Genre}}<br>Language : {{Detail.Language}}</small></p>
+              </div>
+            </div>
+            <div class="card-body">
+              <a routerLink="/home" class="btn btn-primary">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

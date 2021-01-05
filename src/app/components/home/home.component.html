@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row mt-3">
+      <h1>Search Film</h1>
+        <div class="input-group mb-3">
+          <input type="text" [(ngModel)]="namess" class="form-control" placeholder="Recipient's username" (keyup.enter)="getInput()">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="getInput()">Button</button>
+        </div>
+    </div>
+
+    <div class="row" id="movie_list">
+      <div class="col-md-3"*ngFor="let film of Film" >
+        <div class="card p-2 m-2">
+          <img src="{{film.Poster}}" class="card-img-top s" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{film.Title}}</h5>
+            <p class="card-text"><small class="text-muted">{{film.Year}}</small></p>
+            <p class="card-text">IDR : {{harga}}</p>
+            <a [routerLink]="['detail',film.imdbID]" class="btn btn-primary mr-1">See Detail</a>
+            <a [routerLink]="['/order/pesanan',film.imdbID]" class="btn btn-primary ">Order</a>
+          </div>
+        </div>
+        <div class="abc" *ngIf="Film===undefined"> Data tidak ada </div>
+      </div>
+    </div>
+</div>

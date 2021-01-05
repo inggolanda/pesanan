@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-4 p-3">
+            <h2>Order Film</h2>
+            <table class="table table-hover">
+                <thead>
+                    <th>Id</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Film</th>
+                    <th>harga</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let pesan of order">
+                        <td>{{pesan.id}}</td>
+                        <td>{{pesan.name}}</td>
+                        <td>{{pesan.email}}</td>
+                        <td>{{pesan.phone}}</td>
+                        <td>{{pesan.film}}</td>
+                        <td>{{pesan.harga}}</td>
+                        <td>{{pesan.total}}</td>
+                        <td>
+                            <a [routerLink]="['/order/edit',pesan.film,pesan.id]" class="badge badge-success mr-2"> Edite </a>
+                            <a href="" class="badge badge-danger" (click)="deleteorder(pesan.id)" > Delete </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            </div>
+        </div>
+    </div>
+
+
+</div>
